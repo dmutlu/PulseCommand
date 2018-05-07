@@ -1,9 +1,11 @@
 $Run = $true
+$VPN = "https://vpn.example.com"
 Do{
 $Option = Read-Host -Prompt 'Start or Kill?'
 
 If ($Option -eq 'Start'){
 Write-Host 'Starting Pulse Secure'
+Start-Process $VPN
 Start-Service -Name "Pulse Secure Service"
 & 'C:\Program Files (x86)\Common Files\Pulse Secure\JamUI\Pulse.exe'
 Break
